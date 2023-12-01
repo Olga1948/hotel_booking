@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Все отели</title>
+</head>
+<body>
+    <h1>All Hotels</h1>
+    <ul>
+        {% for hotel in hotels %}
+            <li>
+                <strong>{{ hotel.name }}</strong><br>
+                {{ hotel.description }}<br>
+                {{ hotel.address }}<br>
+                <img src="{{ hotel.photo.url }}" alt="{{ hotel.name }} Photo" style="max-width: 300px; max-height: 200px;">
+            </li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
