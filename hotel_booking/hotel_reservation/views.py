@@ -1,6 +1,8 @@
 from rest_framework import generics
 from .models import Hotel, RoomType, Booking
 from .serializers import HotelSerializer, RoomTypeSerializer, BookingSerializer
+from django.views import View
+from django.shortcuts import render
 
 
 class HotelList(generics.ListCreateAPIView):
@@ -31,3 +33,9 @@ class BookingList(generics.ListCreateAPIView):
 class BookingDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
+
+
+class AllHotelsView(View):
+    def get(self, request, *args, **kwargs):
+        hotels = Hotel.objects.all()
+        return render(request, 'all_hotels.html', {'hotels': hotels})
