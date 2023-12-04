@@ -9,5 +9,5 @@ urlpatterns = [
     path('roomtypes/<int:pk>/', views.RoomTypeDetail.as_view(), name='roomtype-detail'),
     path('bookings/', views.BookingList.as_view(), name='booking-list'),
     path('bookings/<int:pk>/', views.BookingDetail.as_view(), name='booking-detail'),
-    path('all-hotels/', views.AllHotelsView.as_view(), name='all-hotels'),
+    path('', views.AllHotelsView.as_view(), name='all-hotels'),
 ]
